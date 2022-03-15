@@ -1,0 +1,1 @@
+export {WordRowData as default} from './WordRowData';

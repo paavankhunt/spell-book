@@ -1,80 +1,127 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { FormikHelpers, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import { IWord, newWord, updateWord } from 'hooks/useFirebase';
 import FormInput from './FormInput';
+import { IWord, modifyWord, newWord } from 'hooks/useFirebase/useFirebase';
+import { useAppDispatch } from 'store';
+import { addWord, updateWord } from 'store/words/reducer';
 
 const validate = Yup.object({
-  word: Yup.string().required('Word is required'),
-  meaning: Yup.string().required('Meaning is required'),
+  word: Yup.string()
+    .required('Word is required')
+    .matches(/^[a-zA-Z]+$/, 'Word must be alphabetical'),
+  meaning: Yup.string(),
   synonyms: Yup.string(),
   antonyms: Yup.string(),
   level: Yup.string().required('Level is required'),
   bands: Yup.number(),
   author: Yup.string(),
 });
-
+// const includesword = (arrayOfArrays: any[], item: any) => {
+//   let array, i, j;
+//   for (i = 0; i < arrayOfArrays.length; ++i) {
+//     array = arrayOfArrays[i];
+//     for (j = 0; j < array.length; ++j) {
+//       if (array[j] === item) {
+//         return true;
+//       }
+//     }
+//   }
+//   return false;
+// };
 interface AddDialogProps {
   open: boolean;
   onClose: () => void;
   isUpdate?: boolean;
+  initValues?: IWord;
 }
 export const AddWordForm: React.FC<AddDialogProps> = ({
   open,
   onClose,
   isUpdate,
+  initValues,
 }) => {
-  const [initialState, setInitialState] = React.useState<any>({
+  const dispatch = useAppDispatch();
+  const initialstate = {
     word: '',
     meaning: '',
     synonyms: '',
     antonyms: '',
     level: '',
-    bands: 0,
+    bands: 1,
     author: '',
-  });
-  const handleInitialState = (initialState: IWord) => {
-    setInitialState({
-      word: initialState.word,
-      meaning: initialState.meaning,
-      synonyms: initialState.synonyms,
-      antonyms: initialState.antonyms,
-      level: initialState.level,
-      bands: initialState.bands,
-      author: initialState.author,
-      _id: initialState._id,
-    });
   };
-  const handleSubmit = () => {
-    formik.isSubmitting = true;
-    isUpdate
-      ? updateWord(initialState._id, {
-          word: formik.values.word,
-          meaning: formik.values.meaning,
-          synonyms: formik.values.synonyms.split(','),
-          antonyms: formik.values.antonyms.split(','),
-          level: formik.values.level,
-          bands: formik.values.bands,
-          author: formik.values.author,
-        })
-      : newWord({
-          word: formik.values.word,
-          meaning: formik.values.meaning,
-          synonyms: formik.values.synonyms.split(','),
-          antonyms: formik.values.antonyms.split(','),
-          level: formik.values.level,
-          bands: formik.values.bands,
-          author: formik.values.author,
-        });
-
-    toast.success('Word added successfully');
-    formik.isSubmitting = false;
+  const updateInitialState = {
+    word: initValues && initValues.word,
+    meaning: initValues && initValues.meaning,
+    synonyms: initValues && initValues.synonyms?.join(', '),
+    antonyms: initValues && initValues.antonyms?.join(', '),
+    level: initValues && initValues.level,
+    bands: initValues && initValues.bands,
+    author: initValues && initValues.author,
+    id: initValues && initValues.id,
+  };
+  const handleSubmit = async (values: any, helper: FormikHelpers<any>) => {
+    helper.setSubmitting(true);
+    if (isUpdate) {
+      await modifyWord(initValues?.id, {
+        word: values.word,
+        meaning: values.meaning,
+        synonyms: values.synonyms?.split(', '),
+        antonyms: values.antonyms?.split(', '),
+        level: values.level,
+        bands: values.bands,
+        author: values.author,
+      }).then((res) => {
+        if (res) {
+          dispatch(
+            updateWord({
+              id: initValues?.id,
+              word: formik.values.word,
+              meaning: formik.values.meaning,
+              synonyms: formik.values.synonyms?.split(', '),
+              antonyms: formik.values.antonyms?.split(', '),
+              level: formik.values.level,
+              bands: formik.values.bands,
+              author: formik.values.author,
+            })
+          );
+        }
+      });
+      toast.success('Word updated successfully');
+    } else {
+      await newWord({
+        word: values.word,
+        meaning: values.meaning,
+        synonyms: values.synonyms?.split(', '),
+        antonyms: values.antonyms?.split(', '),
+        level: values.level,
+        bands: values.bands,
+        author: values.author,
+      }).then((res) => {
+        if (res) {
+          dispatch(
+            addWord({
+              word: formik.values.word,
+              meaning: formik.values.meaning,
+              synonyms: formik.values.synonyms?.split(', '),
+              antonyms: formik.values.antonyms?.split(', '),
+              level: formik.values.level,
+              bands: formik.values.bands,
+              author: formik.values.author,
+            })
+          );
+        }
+      });
+      toast.success('Word added successfully');
+    }
+    helper.setSubmitting(false);
+    onClose();
   };
   const formik = useFormik({
-    initialValues: initialState,
+    initialValues: isUpdate ? updateInitialState : initialstate,
     validationSchema: validate,
     onSubmit: handleSubmit,
   });
@@ -131,6 +178,7 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
         />
         <FormInput
           label="Level"
+          type="select"
           name="level"
           value={formik.values.level}
           onChange={formik.handleChange}
@@ -139,6 +187,9 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
           onBlur={formik.handleBlur}
         />
         <FormInput
+          type="number"
+          max="9"
+          min="1"
           label="Bands"
           name="bands"
           value={formik.values.bands}
@@ -163,7 +214,11 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="submit"
           >
-            {formik.isSubmitting ? 'Loading...' : 'Add Word'}
+            {formik.isSubmitting
+              ? 'Loading...'
+              : isUpdate
+              ? 'Update Word'
+              : 'Add Word'}
           </button>
           <button
             onClick={onClose}

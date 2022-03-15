@@ -5,11 +5,12 @@ import {
   onSnapshot,
   query,
   updateDoc,
+  deleteDoc,
 } from 'firebase/firestore';
 
 import db from '../../config/Firebase';
 export interface IWord {
-  _id?: string;
+  id?: string;
   word?: string;
   meaning?: string;
   synonyms?: string[];
@@ -19,23 +20,52 @@ export interface IWord {
   author?: string;
 }
 export const newWord = async (payload: IWord) => {
-  await setDoc(doc(collection(db, 'words')), payload);
+  return new Promise(async (resolve, reject) => {
+    await setDoc(doc(collection(db, 'words')), payload)
+      .then(() => {
+        resolve(true);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
 };
 
-export const updateWord = async (id: string, payload: any) => {
-  await updateDoc(doc(collection(db, 'words'), id), payload);
+export const modifyWord = async (id: any, payload: any) => {
+  return new Promise(async (resolve, reject) => {
+    await updateDoc(doc(collection(db, 'words'), id), payload)
+      .then(() => {
+        resolve(true);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
 };
 
-export const getAllWords = async () => {
+export const deleteWord = (id: any) => {
+  return new Promise(async (resolve, reject) => {
+    await deleteDoc(doc(collection(db, 'words'), id))
+      .then(() => {
+        resolve(true);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
+export const getAllWords = async (): Promise<IWord[]> => {
   return new Promise((resolve, reject) => {
     const q = query(collection(db, 'words'));
 
     onSnapshot(q, (querySnapshot) => {
       let data: IWord[] = [];
       querySnapshot.forEach((doc) => {
-        data.push(doc.data());
+        data.push({ id: doc.id, ...doc.data() });
       });
-      resolve(data);
+      resolve(data as IWord[]);
+      reject(new Error('Error'));
     });
   });
 };

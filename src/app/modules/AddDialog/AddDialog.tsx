@@ -1,12 +1,15 @@
+import { IWord } from 'hooks/useFirebase/useFirebase';
 import React from 'react';
 import AddWordForm from '../AddWordForm';
 
 interface AddDialogProps {
+  wordData?: IWord;
   open: boolean;
   onClose: () => void;
+  isUpdate?: boolean;
 }
 
-export const AddDialog: React.FC<AddDialogProps> = ({ open, onClose }) => {
+export const AddDialog: React.FC<AddDialogProps> = ({ open, onClose,wordData ,isUpdate}) => {
   return (
     <div
       className={`${
@@ -41,7 +44,7 @@ export const AddDialog: React.FC<AddDialogProps> = ({ open, onClose }) => {
             </button>
           </div>
           <div className="p-6 space-y-6">
-            <AddWordForm open={open} onClose={onClose} />
+            <AddWordForm open={open} onClose={onClose} initValues={wordData} isUpdate={isUpdate} />
           </div>
         </div>
       </div>
