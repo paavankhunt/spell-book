@@ -9,7 +9,12 @@ interface AddDialogProps {
   isUpdate?: boolean;
 }
 
-export const AddDialog: React.FC<AddDialogProps> = ({ open, onClose,wordData ,isUpdate}) => {
+export const AddDialog: React.FC<AddDialogProps> = ({
+  open,
+  onClose,
+  wordData,
+  isUpdate,
+}) => {
   return (
     <div
       className={`${
@@ -21,7 +26,7 @@ export const AddDialog: React.FC<AddDialogProps> = ({ open, onClose,wordData ,is
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <div className="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
             <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-              Add a word
+              {isUpdate ? 'Update Word' : 'Add Word'}
             </h3>
             <button
               type="button"
@@ -44,7 +49,12 @@ export const AddDialog: React.FC<AddDialogProps> = ({ open, onClose,wordData ,is
             </button>
           </div>
           <div className="p-6 space-y-6">
-            <AddWordForm open={open} onClose={onClose} initValues={wordData} isUpdate={isUpdate} />
+            <AddWordForm
+              open={open}
+              onClose={onClose}
+              initValues={wordData}
+              isUpdate={isUpdate}
+            />
           </div>
         </div>
       </div>

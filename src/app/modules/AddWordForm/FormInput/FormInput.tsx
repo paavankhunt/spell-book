@@ -4,7 +4,7 @@ export const FormInput = (prop: any) => {
   const { label, ...props } = prop;
   return (
     <div className="flex flex-col">
-      <label className="mb-1" htmlFor={props}>
+      <label className="mb-1 text-white" htmlFor={props}>
         {label}
       </label>
       <input

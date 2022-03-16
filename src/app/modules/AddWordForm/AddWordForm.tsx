@@ -1,12 +1,13 @@
 import React from 'react';
 import { FormikHelpers, useFormik } from 'formik';
 import * as Yup from 'yup';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FormInput from './FormInput';
 import { IWord, modifyWord, newWord } from 'hooks/useFirebase/useFirebase';
 import { useAppDispatch } from 'store';
 import { addWord, updateWord } from 'store/words/reducer';
+// import ReactChipInput from 'react-chip-input';
 
 const validate = Yup.object({
   word: Yup.string()
@@ -49,10 +50,25 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
     meaning: '',
     synonyms: '',
     antonyms: '',
-    level: '',
+    level: 'easy',
     bands: 1,
     author: '',
   };
+  const levels = [
+    {
+      label: 'Easy',
+      value: 'easy',
+    },
+    {
+      label: 'Medium',
+      value: 'medium',
+    },
+    {
+      label: 'Hard',
+      value: 'hard',
+    },
+  ];
+
   const updateInitialState = {
     word: initValues && initValues.word,
     meaning: initValues && initValues.meaning,
@@ -115,6 +131,11 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
           );
         }
       });
+      formik.resetForm({
+        values: initialstate,
+        errors: {},
+        touched: {},
+      });
       toast.success('Word added successfully');
     }
     helper.setSubmitting(false);
@@ -128,17 +149,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
 
   return (
     <div className="justify-self-center">
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
       <form className="flex flex-col" onSubmit={formik.handleSubmit}>
         <FormInput
           label="Word"
@@ -176,16 +186,25 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
           touched={formik.touched}
           onBlur={formik.handleBlur}
         />
-        <FormInput
-          label="Level"
-          type="select"
-          name="level"
-          value={formik.values.level}
-          onChange={formik.handleChange}
-          error={formik.errors}
-          touched={formik.touched}
-          onBlur={formik.handleBlur}
-        />
+        <div className="flex flex-col">
+          <label className="mb-1 text-white" htmlFor="level">
+            Level
+          </label>
+          <select
+            name="level"
+            className="mt-2 mb-5 border-400 border-solid boder-2"
+            value={formik.values.level}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          >
+            {levels.map((el) => (
+              <option value={el.value} key={el.value}>
+                {el.label}
+              </option>
+            ))}
+          </select>
+          <span>{formik.errors['level'] && formik.touched['level']}</span>
+        </div>
         <FormInput
           type="number"
           max="9"
