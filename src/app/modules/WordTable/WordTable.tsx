@@ -22,19 +22,19 @@ export const WordTable = memo(() => {
   }, [fetchData]);
   return (
     <div>
-      <table className=" table-auto w-full ">
-        <thead>
-          <tr>
-            <th className="px-4 py-2">Word</th>
-            <th className="px-4 py-2">Meaning</th>
-            <th className="px-4 py-2">Synonyms</th>
-            <th className="px-4 py-2">Antonyms</th>
-            <th className="px-4 py-2">Level</th>
-            <th className="px-4 py-2">Bands</th>
-            <th className="px-4 py-2">Added by</th>
+      <table className="sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+        <thead className="text-white">
+          <tr className="bg-teal-400 sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0  ">
+            <th className="p-3 text-left">Word</th>
+            <th className="p-3 text-left">Meaning</th>
+            <th className="p-3 text-left">Synonyms</th>
+            <th className="p-3 text-left">Antonyms</th>
+            <th className="p-3 text-left">Level</th>
+            <th className="p-3 text-left">Added by</th>
+            <th className="p-3 text-left"></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="sm:flex-none">
           {words.map((word: IWord) => (
             <WordRow wordData={word} key={word.id} />
           ))}

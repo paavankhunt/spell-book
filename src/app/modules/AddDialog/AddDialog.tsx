@@ -19,10 +19,10 @@ export const AddDialog: React.FC<AddDialogProps> = ({
     <div
       className={`${
         open ? '' : 'hidden'
-      } overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full`}
+      }  right-1/4 max-w-2xl left-1/4   fixed z-50 justify-center items-center flex h-modal`}
       id="large-modal"
     >
-      <div className="relative px-4 w-full max-w-4xl h-full md:h-auto">
+      <div className="relative h-fit w-full">
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <div className="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
             <h3 className="text-xl font-medium text-gray-900 dark:text-white">

@@ -9,10 +9,12 @@ export const FormInput = (prop: any) => {
       </label>
       <input
         onBlur={props.onBlur}
-        className={' mt-2 mb-5 border-400 border-solid boder-2 '}
+        className={' mt-2 mb-1 border-400 border-solid rounded-md boder-2'}
         {...props}
       />
-      <span>{props.touched[props] && props.error[props]}</span>
+      <span className=" text-red-500 mb-2">
+        {props.touched[props.name] && props.error[props.name]}
+      </span>
     </div>
   );
 };

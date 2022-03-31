@@ -7,7 +7,6 @@ import FormInput from './FormInput';
 import { IWord, modifyWord, newWord } from 'hooks/useFirebase/useFirebase';
 import { useAppDispatch } from 'store';
 import { addWord, updateWord } from 'store/words/reducer';
-// import ReactChipInput from 'react-chip-input';
 
 const validate = Yup.object({
   word: Yup.string()
@@ -17,7 +16,6 @@ const validate = Yup.object({
   synonyms: Yup.string(),
   antonyms: Yup.string(),
   level: Yup.string().required('Level is required'),
-  bands: Yup.number(),
   author: Yup.string(),
 });
 // const includesword = (arrayOfArrays: any[], item: any) => {
@@ -51,7 +49,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
     synonyms: '',
     antonyms: '',
     level: 'easy',
-    bands: 1,
     author: '',
   };
   const levels = [
@@ -75,7 +72,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
     synonyms: initValues && initValues.synonyms?.join(', '),
     antonyms: initValues && initValues.antonyms?.join(', '),
     level: initValues && initValues.level,
-    bands: initValues && initValues.bands,
     author: initValues && initValues.author,
     id: initValues && initValues.id,
   };
@@ -88,7 +84,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
         synonyms: values.synonyms?.split(', '),
         antonyms: values.antonyms?.split(', '),
         level: values.level,
-        bands: values.bands,
         author: values.author,
       }).then((res) => {
         if (res) {
@@ -100,7 +95,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
               synonyms: formik.values.synonyms?.split(', '),
               antonyms: formik.values.antonyms?.split(', '),
               level: formik.values.level,
-              bands: formik.values.bands,
               author: formik.values.author,
             })
           );
@@ -114,7 +108,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
         synonyms: values.synonyms?.split(', '),
         antonyms: values.antonyms?.split(', '),
         level: values.level,
-        bands: values.bands,
         author: values.author,
       }).then((res) => {
         if (res) {
@@ -125,7 +118,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
               synonyms: formik.values.synonyms?.split(', '),
               antonyms: formik.values.antonyms?.split(', '),
               level: formik.values.level,
-              bands: formik.values.bands,
               author: formik.values.author,
             })
           );
@@ -146,7 +138,6 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
     validationSchema: validate,
     onSubmit: handleSubmit,
   });
-
   return (
     <div className="justify-self-center">
       <form className="flex flex-col" onSubmit={formik.handleSubmit}>
@@ -206,19 +197,7 @@ export const AddWordForm: React.FC<AddDialogProps> = ({
           <span>{formik.errors['level'] && formik.touched['level']}</span>
         </div>
         <FormInput
-          type="number"
-          max="9"
-          min="1"
-          label="Bands"
-          name="bands"
-          value={formik.values.bands}
-          onChange={formik.handleChange}
-          error={formik.errors}
-          touched={formik.touched}
-          onBlur={formik.handleBlur}
-        />
-        <FormInput
-          label="Author"
+          label="Added By"
           name="author"
           value={formik.values.author}
           onChange={formik.handleChange}

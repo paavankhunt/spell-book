@@ -16,7 +16,6 @@ export interface IWord {
   synonyms?: string[];
   antonyms?: string[];
   level?: string;
-  bands?: number;
   author?: string;
 }
 export const newWord = async (payload: IWord) => {
