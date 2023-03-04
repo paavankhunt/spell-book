@@ -24,7 +24,7 @@ export const MainPage = () => {
     },
   ];
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col p-4">
       <Navbar />
       <div className="flex gap-4">
         <button
@@ -38,7 +38,7 @@ export const MainPage = () => {
           Add Word
         </button>
         <Popover className="relative">
-          {({ open }) => (
+          {(open: any) => (
             <>
               <Popover.Button
                 className={`

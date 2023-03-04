@@ -1,0 +1,559 @@
+[
+  {
+    "word": "abandon",
+    "definition": "to give up to the control or influence of another person or group",
+    "synonym": "give up",
+    "antonym": "take over"
+  },
+  {
+    "word": "enigma",
+    "definition": "a puzzle or riddle",
+    "synonym": ["puzzle", "riddle"],
+    "antonym": ["solution"]
+  },
+  {
+    "word": "autocracy",
+    "definition": "a form of government in which a single person rules over the whole population",
+    "synonym": ["monarchy", "dictatorship"],
+    "antonym": ["democracy"]
+  },
+  {
+    "word": "cognizance",
+    "definition": "the ability to understand something",
+    "synonym": ["understanding"],
+    "antonym": ["ignorance"]
+  },
+  {
+    "word": "profligate",
+    "definition": "a person who spends too much time or money",
+    "synonym": ["extravagant", "excessive", "spendthrift", "exorbitant"],
+    "antonym": ["save"]
+  },
+  {
+    "word": "enfranchise",
+    "definition": "to give someone the right to do something",
+    "synonym": ["give"],
+    "antonym": ["restrict"]
+  },
+  {
+    "word": "prevailing",
+    "definition": "the most common or most common-looking thing",
+    "synonym": ["common"],
+    "antonym": ["uncommon"]
+  },
+  {
+    "word": "dogma",
+    "definition": "a set of beliefs or rules that are followed",
+    "synonym": ["beliefs"],
+    "antonym": ["fallacies"]
+  },
+  {
+    "word": "incontrovertible",
+    "definition": "unable to be changed or altered",
+    "synonym": ["unchangeable"],
+    "antonym": ["changeable"]
+  },
+  {
+    "word": "dilemma",
+    "definition": "a situation that requires a decision",
+    "synonym": ["situation", "quandary", "predicament", "pickle"],
+    "antonym": ["solution"]
+  },
+  {
+    "word": "especially",
+    "definition": "in a way that is particularly",
+    "synonym": ["particularly"],
+    "antonym": ["unfortunately"]
+  },
+  {
+    "word": "canon",
+    "definition": "a set of rules or laws",
+    "synonym": ["laws"],
+    "antonym": ["fallacies"]
+  },
+  {
+    "word": "conundrum",
+    "definition": "a difficult problem",
+    "synonym": ["problem"],
+    "antonym": ["solution"]
+  },
+  {
+    "word": "contrivance",
+    "definition": "a device or means of doing something",
+    "synonym": ["device"],
+    "antonym": ["solution"]
+  },
+  {
+    "word": "contingent",
+    "definition": "a situation that requires a decision",
+    "synonym": ["situation", "quandary", "predicament", "pickle"],
+    "antonym": ["solution"]
+  },
+  {
+    "word": "tenet",
+    "definition": "a principle or belief",
+    "synonym": ["principle"],
+    "antonym": ["fallacies"]
+  },
+  {
+    "word": "tantamount",
+    "definition": "equivalent in amount or value",
+    "synonym": ["equivalent"],
+    "antonym": ["different"]
+  },
+  {
+    "word": "jovial",
+    "definition": "happy and merry",
+    "synonym": [
+      "happy",
+      "merry",
+      "convivial",
+      "jolly",
+      "genial",
+      "cheerful",
+      "friendly"
+    ],
+    "antonym": ["sad"]
+  },
+  {
+    "word": "merriment",
+    "definition": "a state of happiness",
+    "synonym": ["happiness", "gaiety"],
+    "antonym": ["sadness"]
+  },
+  {
+    "word": "merciful",
+    "definition": "kind and forgiving",
+    "synonym": ["kind", "forgiving"],
+    "antonym": ["hateful"]
+  },
+  {
+    "word": "distraught",
+    "definition": "unhappy and angry",
+    "synonym": ["angry", "furious", "fuming", "fretful", "frustrated"],
+    "antonym": ["calm"]
+  },
+  {
+    "word": "exertion",
+    "definition": "a physical or mental effort",
+    "synonym": ["effort"],
+    "antonym": ["relaxation"]
+  },
+  {
+    "word": "pauper",
+    "definition": "a person who is not rich",
+    "synonym": ["poor", "bankrupt", "beggar", "penniless", "destitute"],
+    "antonym": ["rich"]
+  },
+  {
+    "word": "hermit",
+    "definition": "a person who lives alone",
+    "synonym": ["lonely", "solitary", "orphan", "widow"],
+    "antonym": ["couple"]
+  },
+  {
+    "word": "solitude",
+    "definition": "the state of being alone",
+    "synonym": ["loneliness", "orphanage", "widowhood"],
+    "antonym": ["couple"]
+  },
+  {
+    "word": "dwelling",
+    "definition": "a place where people live",
+    "synonym": ["house", "home", "residence", "dormitory", "abode"],
+    "antonym": ["leaving"]
+  },
+  {
+    "word": "accommodation",
+    "definition": "the act of providing a place for someone to live",
+    "synonym": ["living"],
+    "antonym": ["leaving"]
+  },
+  {
+    "word": "optimistic ",
+    "definition": "hopeful",
+    "synonym": [
+      "hopeful",
+      "hopefulness",
+      "hope",
+      "expectation",
+      "expectations"
+    ],
+    "antonym": ["pessimistic"]
+  },
+  {
+    "word": "heed",
+    "definition": "to pay attention to",
+    "synonym": ["attention", "attentiveness", "observation", "observations"],
+    "antonym": ["ignore"]
+  },
+  {
+    "word": "peril",
+    "definition": "a danger",
+    "synonym": ["danger", "perils"],
+    "antonym": ["safe"]
+  },
+  {
+    "word": "minute",
+    "definition": "a very small amount of time",
+    "synonym": ["second", "secondly", "moment", "moments"],
+    "antonym": ["hour"]
+  },
+  {
+    "word": "remorse",
+    "definition": "a feeling of regret",
+    "synonym": [
+      "regret",
+      "regretful",
+      "regretfulness",
+      "regretting",
+      "regrettable"
+    ],
+    "antonym": ["no regret"]
+  },
+  {
+    "word": "ruckus",
+    "definition": "a noisy or disorderly situation",
+    "synonym": ["noise", "noisiness"],
+    "antonym": ["quiet"]
+  },
+  {
+    "word": "disgust",
+    "definition": "a feeling of revulsion",
+    "synonym": ["revulsion", "revolting", "revoltingly"],
+    "antonym": ["pleasure"]
+  },
+  {
+    "word": "viability",
+    "definition": "the state of being capable of surviving",
+    "synonym": ["survival", "survivability", "survivable"],
+    "antonym": []
+  },
+  {
+    "word": "ergonomic",
+    "definition": "relating to the physical",
+    "synonym": ["physical", "physicality"],
+    "antonym": ["uneconomic"]
+  },
+  {
+    "word": "contempt",
+    "definition": "a feeling of disregard",
+    "synonym": ["disregard", "disregardful"],
+    "antonym": ["respect"]
+  },
+  {
+    "word": "smooth talker",
+    "definition": "a person who is easy to talk to",
+    "synonym": ["easy", "easygoing"],
+    "antonym": ["rough"]
+  },
+  {
+    "word": "demise",
+    "definition": "the death of a person",
+    "synonym": ["death", "deaths"],
+    "antonym": ["birth"]
+  },
+  {
+    "word": "prudent",
+    "definition": "careful",
+    "synonym": ["careful", "cautious", "cautiousness", "cautiousness"],
+    "antonym": ["reckless"]
+  },
+  {
+    "word": "sorrow",
+    "definition": "a feeling of sadness",
+    "synonym": ["sad", "sadness", "sadly"],
+    "antonym": ["happiness"]
+  },
+  {
+    "word": "polite",
+    "definition": "respectful",
+    "synonym": ["respectful", "respectfully", "respectfulness"],
+    "antonym": ["rude"]
+  },
+  {
+    "word": "benign",
+    "definition": "not causing harm",
+    "synonym": ["harmless", "harmlessness"],
+    "antonym": ["malignant"]
+  },
+  {
+    "word": "sue",
+    "definition": "to demand compensation",
+    "synonym": ["compensation", "compensate", "compensating"],
+    "antonym": ["no sue"]
+  },
+  {
+    "word": "throughput",
+    "definition": "the amount of something produced",
+    "synonym": ["amount", "amounts", "quantity", "quantities"],
+    "antonym": ["no throughput"]
+  },
+  {
+    "word": "satisfaction",
+    "definition": "the feeling of being content",
+    "synonym": ["content", "contented", "contentedly"],
+    "antonym": ["unsatisfied"]
+  },
+  {
+    "word": "content",
+    "definition": "feeling or showing no emotion",
+    "synonym": ["unemotional", "unemotionally"],
+    "antonym": ["emotional"]
+  },
+  {
+    "word": "imposter",
+    "definition": "a person who is not the real person",
+    "synonym": ["impostor"],
+    "antonym": ["real"]
+  },
+  {
+    "word": "exceptionally",
+    "definition": "in a very unusual way",
+    "synonym": ["exceptionally", "exceptionally"],
+    "antonym": ["normally"]
+  },
+  {
+    "word": "myriad",
+    "definition": "a large number",
+    "synonym": ["large", "largeness", "largely"],
+    "antonym": ["few"]
+  },
+  {
+    "word": "ardent",
+    "definition": "very passionate",
+    "synonym": ["passionate", "passionately", "passion"],
+    "antonym": []
+  },
+  {
+    "word": "hyphenate",
+    "definition": "to separate words",
+    "synonym": ["separate", "separating", "separation"],
+    "antonym": []
+  },
+  {
+    "word": "versatile",
+    "definition": "able to use many different skills",
+    "synonym": ["adaptable", "adaptable", "adaptability"],
+    "antonym": []
+  },
+  {
+    "word": "sensuous",
+    "definition": "having a strong and deep feeling",
+    "synonym": ["deep", "deeply", "deepness"],
+    "antonym": ["insensitive"]
+  },
+  {
+    "word": "speculation",
+    "definition": "a thought about something",
+    "synonym": ["thought", "thoughtful", "thoughtfully"],
+    "antonym": ["reality"]
+  },
+  {
+    "word": "quint",
+    "definition": "a number of 5",
+    "synonym": [],
+    "antonym": []
+  },
+  {
+    "word": "midst",
+    "definition": "in the middle of",
+    "synonym": ["middle", "amid"],
+    "antonym": ["end"]
+  },
+  {
+    "word": "establish",
+    "definition": "to set up",
+    "synonym": ["introduce"],
+    "antonym": []
+  },
+  {
+    "word": "prolific",
+    "definition": "producing a large number of something",
+    "synonym": ["large", "largeness", "largely"],
+    "antonym": ["few"]
+  },
+  {
+    "word": "tic",
+    "definition": "a sharp, sharp-toothed, and sharp-witted person",
+    "synonym": ["sharp", "most often"],
+    "antonym": ["no tic"]
+  },
+  {
+    "word": "many",
+    "definition": "a large number",
+    "synonym": ["large", "largeness", "humerus"],
+    "antonym": ["few"]
+  },
+  {
+    "word": "litter",
+    "definition": "a collection of things",
+    "synonym": ["junk", "waste"],
+    "antonym": []
+  },
+  {
+    "word": "lucid",
+    "definition": "clearly understood",
+    "synonym": ["clear", "clearly", "clearness"],
+    "antonym": []
+  },
+  {
+    "word": "endorsement",
+    "definition": "a statement that someone has done well",
+    "synonym": ["statement", "support"],
+    "antonym": []
+  },
+  {
+    "word": "enthusiastic",
+    "definition": "very interested in something",
+    "synonym": ["interested", "interestedly", "interest"],
+    "antonym": ["unenthusiastic"]
+  },
+  {
+    "word": "circumstance",
+    "definition": "a situation",
+    "synonym": ["situation", "circumstances"],
+    "antonym": []
+  },
+  {
+    "word": "terrible",
+    "definition": "very bad",
+    "synonym": ["bad", "badly", "disgust"],
+    "antonym": ["good"]
+  },
+  {
+    "word": "courtesy",
+    "definition": "a polite way of doing things",
+    "synonym": ["polite", "politely", "politeness"],
+    "antonym": ["rude"]
+  },
+  {
+    "word": "hollow",
+    "definition": "empty",
+    "synonym": ["empty", "void", "voidness"],
+    "antonym": ["full"]
+  },
+  {
+    "word": "exacerbate",
+    "definition": "to make worse",
+    "synonym": ["make worse", "worse", "worsen"],
+    "antonym": ["maintain"]
+  },
+  {
+    "word": "abate",
+    "definition": "to make less",
+    "synonym": ["less", "lessen", "lessening"],
+    "antonym": ["increase"]
+  },
+  {
+    "word": "confluence",
+    "definition": "a place where two or more things meet",
+    "synonym": ["place", "meeting", "meeting place"],
+    "antonym": ["separation"]
+  },
+  {
+    "word": "avid",
+    "definition": "very eager",
+    "synonym": ["eager", "eagerly", "eagerness"],
+    "antonym": ["lazy"]
+  },
+  {
+    "word": "colossal",
+    "definition": "very large",
+    "synonym": ["large", "largeness", "largely"],
+    "antonym": ["small"]
+  },
+  {
+    "word": "abode",
+    "definition": "a place where someone lives",
+    "synonym": ["place", "residence"],
+    "antonym": []
+  },
+  {
+    "word": "spongy",
+    "definition": "soft and flexible",
+    "synonym": ["soft", "softly", "softness"],
+    "antonym": ["hard"]
+  },
+  {
+    "word": "tangible",
+    "definition": "real",
+    "synonym": ["real", "realness"],
+    "antonym": ["inert"]
+  },
+  {
+    "word": "porous",
+    "definition": "having a low density",
+    "synonym": ["low", "lowness", "low density"],
+    "antonym": ["solid"]
+  },
+  {
+    "word": "insipid",
+    "definition": "lack of interest",
+    "synonym": ["lack of interest", "lack of interest", "lack of interest"],
+    "antonym": ["interesting"]
+  },
+  {
+    "word": "listless",
+    "definition": "lacking interest",
+    "synonym": ["lack of interest", "lack of interest", "lack of interest"],
+    "antonym": ["interesting"]
+  },
+  {
+    "word": "dof",
+    "definition": "a degree of freedom",
+    "synonym": ["freedom", "freedom"],
+    "antonym": []
+  },
+  {
+    "word": "hench",
+    "definition": "a person who is a servant",
+    "synonym": ["servant", "servant", "servant"],
+    "antonym": []
+  },
+  {
+    "word": "knell",
+    "definition": "a sound made by a bell",
+    "synonym": ["bell", "bell", "bell"],
+    "antonym": []
+  },
+  {
+    "word": "but",
+    "definition": "used to connect words",
+    "synonym": ["yet", "nevertheless", "however", "though", "still"],
+    "antonym": []
+  },
+  {
+    "word": "accept",
+    "definition": "to agree to",
+    "synonym": ["receive", "take", "gain"],
+    "antonym": []
+  },
+  {
+    "word": "bad",
+    "definition": "not good",
+    "synonym": [
+      "substandard",
+      "poor",
+      "inferior",
+      "unfortunate",
+      "unpleasant",
+      "unacceptable",
+      "unwanted",
+      "undesirable"
+    ],
+    "antonym": ["good"]
+  },
+  {
+    "word": "bead",
+    "definition": "a small piece of something",
+    "synonym": ["piece", "piece", "piece"],
+    "antonym": []
+  },
+  {
+    "word": "supporting",
+    "definition": "supporting",
+    "synonym": ["holdup", "bear", "carry", "keep up"],
+    "antonym": []
+  }
+]
